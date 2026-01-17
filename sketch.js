@@ -9,6 +9,7 @@ let holdTime = 120;
 let transitionSpeed = 0.005;
 let zoff = 0;
 
+let mult = 1;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -46,7 +47,7 @@ function draw() {
     point(p.x, p.y);
     
     let n = noise(p.x * scale, p.y * scale, zoff);
-    let a = 5*TAU * (n - 0.5);
+    let a = mult*TAU * (n - 0.5);
 
     p.x += cos(a) * speed;
     p.y += sin(a) * speed;
@@ -61,11 +62,13 @@ function draw() {
 function mouseReleased() {
   noiseSeed(millis());
   scale = random(0, 0.1);
+  mult = random(1,5);
 }
 
 function touchEnded() {
   noiseSeed(millis());
   scale = random(0, 0.1);
+  mult = random(1,5);
 }
 
 function onScreen(v) {
