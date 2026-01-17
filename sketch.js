@@ -62,6 +62,11 @@ function mouseReleased() {
   scale = random(0, 0.1);
 }
 
+function touchStarted() {
+  noiseSeed(millis());
+  scale = random(0, 0.1);
+}
+
 function onScreen(v) {
   return v.x >= 0 && v.x <= width && v.y >=0 && v.y <= height;
 }
