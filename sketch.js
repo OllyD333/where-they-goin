@@ -19,7 +19,7 @@ function setup() {
   colors = [
     color(255, 0, 255),  
     color(0, 255, 255), 
-    color(255, 0, 0), 
+    color(0, 255, 0), 
     color(255, 255, 0)  
   ]; 
 }
@@ -62,7 +62,7 @@ function mouseReleased() {
   scale = random(0, 0.1);
 }
 
-function touchStarted() {
+function touchEnded() {
   noiseSeed(millis());
   scale = random(0, 0.1);
 }
