@@ -20,7 +20,8 @@ function setup() {
     color(255, 0, 255),  
     color(0, 255, 255), 
     color(0, 255, 0), 
-    color(255, 255, 0)  
+    color(255, 255, 0),
+    color(255, 0, 0)
   ]; 
 }
 
@@ -45,7 +46,7 @@ function draw() {
     point(p.x, p.y);
     
     let n = noise(p.x * scale, p.y * scale, zoff);
-    let a = TAU * (n - 0.5);
+    let a = 5*TAU * (n - 0.5);
 
     p.x += cos(a) * speed;
     p.y += sin(a) * speed;
